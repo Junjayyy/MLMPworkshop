@@ -1,25 +1,25 @@
 **Project**
 
-Repository: https://github.com/ultralytics/yolov5
+Repository: https://github.com/Junjayyy/MLMPworkshop
 
-Inference task: Object detection
+Inference task: Monocular Depth Estimation
 
 **Repo map**
 
 Environment: pyproject.toml & requirements.txt
 
-Entry point: detect.py
+Entry point: run.py
 
-Model: The detect.py automatically downloads models from the latest YOLOv5 release 
+Model: Depth-Anything-V2 (automatically downloads checkpoint weights) 
 
-Input: data/images/
+Input: assets/examples/demo01.jpg
 
-Output: run/detect/exp
+Output: vis_depth/demo01.png
 
 **Environment setup**
 ```text
-git clone https://github.com/ultralytics/yolov5
-cd yolov5
+git clone [https://github.com/Junjayyy/MLMPworkshop](https://github.com/Junjayyy/MLMPworkshop)
+cd Depth-Anything-V2_official_fresh
 uv python install 3.10
 uv venv --python 3.10
 source .venv/bin/activate
@@ -28,21 +28,21 @@ uv pip install -r requirements.txt
 
 **Inference** 
 ```text
-python detect.py --weights yolov5s.pt --source '/home/sdu/Desktop/workshop02_projects/yolov5/data/images/test.jpg'
+python run.py --encoder vits --img-path assets/examples/demo01.jpg --outdir vis_depth
 ```
 
 **One real failure**
 
-Category: Version conflict
+Category: Git Authentication & Divergent Branches
 
-Root cause: the full declared dependency set is not resolvable for Python 3.8 because the optional export extra includes keras>=3.5.0,<=3.12.0, which requires Python >=3.9 / >=3.10 depending on version. So the effective minimum for the full dependency set is Python 3.9+, while the repo metadata still says >=3.8.
+Root cause: GitHub no longer supports account password authentication for terminal Git operations, and the local repository history diverged from the remote initialization.
 
-Minimal fix: change to Python 3.10
+Minimal fix: Generated a Personal Access Token (PAT) and performed a force push to sync the repository.
 
 **AI agent check**
 
-Which AI coding agent did you use?: copilot
+Which AI coding agent did you use?: Gemini
 
-What did it change?: only venv python version
+What did it change?: Guided through resolving git divergent branch merges, updating remote URLs with PAT, and setting up the README structure.
 
-How did you verify the change?: I asked it to do this
+How did you verify the change?: Verified that the depth map was successfully generated under vis_depth/demo01.png and successfully pushed to the GitHub repository.
