@@ -18,7 +18,7 @@ Output: vis_depth/demo01.png
 
 **Environment setup**
 ```text
-git clone [https://github.com/Junjayyy/MLMPworkshop](https://github.com/Junjayyy/MLMPworkshop)
+git clone https://github.com/DepthAnything/Depth-Anything-V2.git
 cd Depth-Anything-V2_official_fresh
 uv python install 3.10
 uv venv --python 3.10
