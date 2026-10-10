@@ -1,6 +1,6 @@
 **Project**
 
-Repository: https://github.com/Junjayyy/MLMPworkshop
+Repository: https://github.com/DepthAnything/Depth-Anything-V2.git
 
 Inference task: Monocular Depth Estimation
 
